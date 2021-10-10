@@ -1,0 +1,30 @@
+// The _ in the filename tells Sass that this is a partial, it is not means to be compiled into CSS
+
+.container {
+    max-width: 1100px;
+    padding: 0 30px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+// Margin and padding classes
+$spaceamounts: (1,2,3,4,5);
+
+    @each $space in $spaceamounts {
+        //creating a $space variable which is one of the $spaceamounts numbers, then creating a '.m-' class with the $space number, and using that to set the margin as the  $space number in rems 
+        .m-#{$space} {
+            margin: #{$space}rem;
+        }
+        //Just for y-axis margin:
+        .my-#{$space} {
+            margin: #{$space}rem 0;
+        }
+// As above, but for padding rather than margin:
+        .p-#{$space} {
+            padding: #{$space}rem;
+        }
+        //Just for y-axis padding:
+        .py-#{$space} {
+            padding: #{$space}rem 0;
+        }
+    }

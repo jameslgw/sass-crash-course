@@ -1,0 +1,69 @@
+@import 'config';
+@import 'utilities';
+@import 'buttons';
+@import 'mobile';
+
+//NB you don't deploy your SCSS files, a lot of the time you'll have a folder called 'build' or something where you'll have your CSS and HTML and then you'd have your SCSS outside of it, because all you need is the CSS
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $light-color;
+    line-height: 1.6;
+    font-family: $font-stack;
+}
+
+.showcase {
+@include set-background($primary-color);
+    height: 600px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        ul {
+            display: flex;
+            list-style-type: none;
+        }
+        li {
+            padding: 15px;
+        }
+        
+    a {
+        color: set-text-color($primary-color);
+    }
+    a:hover {
+        color: $secondary-color;
+    }
+}
+//  because this class is nested within the 'showcase' class, and the class below is 'showcase-content', using & can work as shorthand for 'showcase':
+&-content {
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 30px;
+
+img {
+    width: 50%;
+}
+h1 {
+    font-size: 50px;
+    line-height: 1.2;
+}
+}
+    }
+
+
+img {
+    width: 100%
+}
+
+a {
+    text-decoration: none;
+}
+

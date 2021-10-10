@@ -1,0 +1,23 @@
+// The _ in the filename tells Sass that this is a partial, it is not means to be compiled into CSS
+// We have access to these variables (e.g $primary-color) because the main style.scss file includes the _config, which has all the variables, and the _buttons file
+
+%btn {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 3px;
+
+    &:hover {
+        transform: scale(0.98);
+    }
+}
+
+.btn-primary {
+    @extend %btn;
+    @include set-background(lighten($primary-color, 10%));
+}
+
+.btn-secondary {
+    @extend %btn;
+    @include set-background(lighten($secondary-color, 10%));
+}
